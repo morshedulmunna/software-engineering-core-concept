@@ -33,12 +33,12 @@
     14. block scope
     15. Isn't there hoisting in let/const or function?
     16. Temporal Date zone -> it's time zone which one Create phase to before variable assign
-    17 Microtask -< the callback function from promise
+    17 Micro Task -< the callback function from promise
     18 Promise
-    19. Javascript Runtime Environment
-    20. Javascript Engine
+    19. JavaScript Runtime Environment
+    20. JavaScript Engine
     21. Browser Resource or features
-    22. Web Apis
+    22. Web APIS
     23. thread
     24. heap
         1. Callback queue or task queue
@@ -63,7 +63,18 @@
 
 # Node Js
 
-     Module
+<!-- Node JS Deep Thinking -->
+
+    Class -1
+        - Javascript(100%js) -> nodeJs(50%js, 50%c++) -> v8(30%js, 70%c++) & libuv(100%C++)
+        - Node Modules -> http,fs,crypto,path and lots
+
+    class -2
+        - Javascript
+
+<!-- Node JS Deep Thinking -->
+
+    Module
     1. Os
     2. path
     3. fs
@@ -81,3 +92,16 @@
         b. minor
         c. patch
     8. route
+    9. Restful API
+       1. REST -> Representational state Transfer
+        ====== Set of Rules for REST
+            - Stateless Communications
+            - Cacheability and Layered System
+            - Use of Standard Methods and Uniform Interface
+              - **GET**: Retrieves a resource or collection of resources.
+              - **POST**: Creates a new resource or submits data for processing.
+              - **PUT**: Updates an existing resource fully by replacing it with new data.
+              - **PATCH**: Partially updates a resource with specific changes.
+              - **DELETE**: Removes a resource.
+            - Clear and Consistent Naming Conventions
+       2. APIS -> Application Programming Interface
