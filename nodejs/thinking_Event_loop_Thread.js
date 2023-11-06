@@ -7,23 +7,35 @@ let afterCall = 4;
 
 /*  
 =======Event Loop ==========
+
+start: my Node File 
+=> when my file run  || myFile.runContents()
+
 const pendingTimers = []
 const pendingOSTask = []  => Example: Network req
 const pendingOperations = []
 
-=> when my file run  || myFile.runContents()
 function shouldContinue(){
-    -
-    -
-    -
+    - check one: any pending setTimeout, setInterval, setImmediate
+    -check two: any pending OS task? (Like server listening to port)
+    -check three: any pending long running Operations? like fs Module
+
     return pendingTimers.length || pendingOSTask.length || pendingOperations.length
 }
 
 while (shouldContinue) {
-    -
-    -
-    Event loop running -> take task and set heap -> microtask queue / callback queue to
+    -1 Node looks pendingTimers and sees if any function is ready to be called, setTimeout, setInterval
+    -2 Node looks at pendingOsTask and pendingOperations and calls relevant callback
+    -3 Pause Execution. Continue when.......
+        - a new pending OS task is Done
+        - a new pending Operation is Done
+        - a new pending Timer is Done
+    -4  Looks at pendingTimers, call any setImmediate
+    -5  handle any close events
+
+    Event loop running -> take task and ready to call -> Pass it Call Stack for Execute the function
 }
+End: Back to Terminal
 */
 
 //Checking is really use thread pool 4
@@ -68,10 +80,11 @@ function doNetWorkReq() {
         })
         .end();
 }
-
+/* 
 for (let i = 0; i < 2000; i++) {
     doNetWorkReq();
 }
+*/
 
 // ========================================>
 /*
