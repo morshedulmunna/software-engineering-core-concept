@@ -1,12 +1,12 @@
+# JavaScript
 
-  # JavaScript
     1. Execution Context
       # Parts
         1.Memory Component or variable environment
         2.Code Component or thread of execution
       #Phases
         1. Creation Phase or memory creation phase
-        2. Execution phase or code execution phase  
+        2. Execution phase or code execution phase
     2. Call Stack
     3. Function
         1. Function declaration or function statement
@@ -25,14 +25,14 @@
         3. Type Error: "__" when try to mutate a const variable
     7. Scope
     8. Scope chain
-    9. lexical Environment -> Execution context er memory component + Parent execution context er lexical Environment 
-    10. Closure 
+    9. lexical Environment -> Execution context er memory component + Parent execution context er lexical Environment
+    10. Closure
     11. variable shadowing or shadowing
     12. memory leaking problem -> then came to ES6 Let and const
     13. let / const
     14. block scope
     15. Isn't there hoisting in let/const or function?
-    16. Temporal Date zone -> it's time zone which one Create phase to before variable assign 
+    16. Temporal Date zone -> it's time zone which one Create phase to before variable assign
     17 Microtask -< the callback function from promise
     18 Promise
     19. Javascript Runtime Environment
@@ -46,9 +46,8 @@
     25. Event loop
     26. Starvation of function -> when callback queue call another function and continue running and accord loop
 
+# Operating System
 
-
-    # Operating System
     1. RAM
     2. HHD(Hard Disk)
     3.CPU
@@ -61,8 +60,9 @@
     10. Logical CPU
     11. Concurrency or Concurrent Execution
     12. Parallel Execution
-  
-  # Node Js
+
+# Node Js
+
      Module
     1. Os
     2. path
@@ -74,7 +74,7 @@
       - syntactical sugar
       - property
       - generator function
-      - method 
+      - method
     6. Object
     7. version
         a. Major
