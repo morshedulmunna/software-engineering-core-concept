@@ -17,34 +17,40 @@
         6. fist class function or higher order function
         7.callback function
         8.parameters vs arguments
-    4. hoisting -> When allocating Memory before Execution phase
+    4. hoisting -> When allocating Memory before Execution phase ( var, let, const, function)
     5. Primitive vs non-primitive Data types
     6. Errors:
-        1. Reference Error: "__" is Not Defined
-        2. Reference Error: "__" Can't assess before declaration (temporary Dead zone)
-        3. Type Error: "__" when try to mutate a const variable
+        1. Reference Error: "__" is Not Defined -> No any key in lexical environment
+        2. Reference Error: "__" Can't assess before declaration ->(temporary Dead zone)
+        3. Type Error: "__" -> when try to mutate a const variable
     7. Scope
-    8. Scope chain
+    8. Scope chain -> {Lexical Env Chaining }
     9. lexical Environment -> Execution context er memory component + Parent execution context er lexical Environment
-    10. Closure
-    11. variable shadowing or shadowing
-    12. memory leaking problem -> then came to ES6 Let and const
+    10. Closure -> ( Binding Function and her lexical environment)
+    11. variable shadowing or shadowing  -> ( var a = 10; {var a = 20} |-> Pointer same memory pointer
+    | shadow global scope to block scope | ->| Block scope complete execution end then it's gone| let and const not shadowing ony shadow var |->| ( var a = 10; {let a = 30} && let a = 20; fn x(){var a =30}^^ it's right not iligal shadow ))
+
+    12. memory leaking problem -> solve it then came to ES6 Let and const
     13. let / const
-    14. block scope
-    15. Isn't there hoisting in let/const or function?
-    16. Temporal Date zone -> it's time zone which one Create phase to before variable assign
-    17 Micro Task -< the callback function from promise
-    18 Promise
-    19. JavaScript Runtime Environment
-    20. JavaScript Engine
-    21. Browser Resource or features
-    22. Web APIS
-    23. thread
-    24. heap
+
+    14. block={} or Component Statement -> (Combine or grouping of multiple statements) if()_block or Statement
+    15. Block scope - > (what all variable or statement access in the block that is the scope,/ let and const hoisted in the block scope | Block scope complete execution end then it's gone)
+
+
+    16. Isn't there hoisting in let/const or function?
+    17. Temporal Date zone -> it's time zone which one Create phase to before variable assign
+    18. Micro Task -> the callback function from promise
+    19. Promise
+    20. JavaScript Runtime Environment (browser environment, nodejs Environment)
+    21. JavaScript Engine
+    22. Browser Resource or features
+    23. Web APIS
+    24. thread
+    25. heap
         1. Callback queue or task queue
         2. microtask queue
-    25. Event loop
-    26. Starvation of function -> when callback queue call another function and continue running and accord loop
+    26. Event loop
+    27. Starvation of function -> when callback queue call another function and continue running and accord loop
 
 # Operating System
 
