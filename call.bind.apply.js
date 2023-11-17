@@ -26,6 +26,8 @@ const person = {
 
 introduce.apply(person, ["Hi"]); // Output: Hi, my name is Alice and I'm 25 years old.
 
+//
+//
 // The bind() method creates a new function that, when called, has its this value set to a specific value, and arguments are fixed
 function introduce(greeting) {
     console.log("Binding...", this);
@@ -40,11 +42,5 @@ const baby1 = {
     age: 1,
 };
 
-const baby2 = function (name, age) {
-    this.name = name;
-    this.age = age;
-    console.log("Baby 2 this", this);
-};
-
-const introduceBaby = introduce.bind(baby2("Baby2", 20));
+const introduceBaby = introduce.bind(baby1);
 introduceBaby("Hey"); // Output: Hey, my name is Max and I'm 1 years old.
