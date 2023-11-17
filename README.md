@@ -51,6 +51,10 @@
         2. microtask queue
     26. Event loop
     27. Starvation of function -> when callback queue call another function and continue running and accord loop
+    28. ->
+    29. -------------------------------------------------------------------------
+    30. this keyword, call , apply() , bind()
+    31. Normal function vs arrow function -> Main difference this keyword. in arrow function this always point outer scope object | where deacler the function.
 
 # Operating System
 
@@ -111,3 +115,19 @@
               - **DELETE**: Removes a resource.
             - Clear and Consistent Naming Conventions
        2. APIS -> Application Programming Interface
+
+# ReactJs
+
+    1. What is React. -> Virtual DOM, Real DOM
+    2. component
+    3. props, props dealing
+    4. React Lifecycle
+       1. Mounting
+          1. constructor()
+          2. render()
+          3. componentDinMount()
+       2. Updating
+          1. render()
+          2. componentDidUpdate()
+       3. Unmounting
+          1. componentWillUnmount()
