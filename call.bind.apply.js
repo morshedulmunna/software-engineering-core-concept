@@ -1,3 +1,4 @@
+/*
 // The call() method calls a function with a given this value and arguments provided individually.
 function Person(name, age) {
     this.name = name;
@@ -44,3 +45,32 @@ const baby1 = {
 
 const introduceBaby = introduce.bind(baby1);
 introduceBaby("Hey"); // Output: Hey, my name is Max and I'm 1 years old.
+
+*/
+// Create a myoOwn MyBind method
+let info = {
+    name: "Muhib Khan",
+    age: 12,
+};
+
+let printName = function (birthday, university, hello) {
+    console.log(
+        `${hello} My name is ${this.name} and age is ${this.age}. my birthday ${birthday}. my university name is ${university}`
+    );
+};
+
+let printMyInfo = printName.bind(info, "21/04/1997", "BUBT");
+printMyInfo("Hi");
+
+Function.prototype.myBind = function (...arg) {
+    console.log("arg:", arg);
+    let obj = this;
+    let params = arg.slice(1);
+    console.log("params:", params);
+    return function (...arg2) {
+        obj.apply(arg[0], [...params, ...arg2]);
+    };
+};
+
+let printMyInfo2 = printName.myBind(info, "21/04/1997", "BUBT");
+printMyInfo2("Hello");
