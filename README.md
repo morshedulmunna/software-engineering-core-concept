@@ -131,3 +131,9 @@
           2. componentDidUpdate()
        3. Unmounting
           1. componentWillUnmount()
+
+### Advance React
+
+    1. Portals React -> https://react.dev/reference/react-dom/createPortal
+    2. forwardRef -> https://react.dev/reference/react/forwardRef
+    3.  Error Boundary -> https://react.dev/reference/react/useTransition#displaying-an-error-to-users-with-error-boundary
