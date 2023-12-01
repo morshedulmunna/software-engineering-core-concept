@@ -1,5 +1,6 @@
 ## Table of Contents <a name="table"></a>
 
+-   [JavaScript in-depth Architecture](#javascript-architecture)
 -   [JavaScript Execution Context](#javascript-execution-context)
 -   [Call Stack](#call-stack)
 -   [Function Details](#function-details)
@@ -18,9 +19,9 @@
     -   [AggregateError](#aggregateerror)
 -   [JavaScript Scope & Scope Chain](#javascript-scope-chain)
 -   [Variable Shadowing , let const [Solve memory leak problem]](#variable-shadowing)
--   [Javascript Hoisting](#javascript-hoisting)
--   [Javascript closure](#javascript-closure)
--   [emporal Dead Zone (TDZ) in JavaScript](#javascript-deadzone)
+-   [JavaScript Hoisting](#javascript-hoisting)
+-   [JavaScript closure](#javascript-closure)
+-   [undefined vs not Defined in JavaScript](#undefined-vs-notdefined)
 
 # Learn JavaScript core Concept!
 
@@ -482,6 +483,12 @@ For functions, **function declarations are hoisted entirely**, so you can call a
   </p>
 </details>
 
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
+
 ---
 
 ### JavaScript Closure <a name="javascript-closure"></a>
@@ -519,6 +526,58 @@ Another Example
 
 <a name="javascript-deadzone"></a>
 
+[!Important]
+
+<details>
+ <summary><b>Create a Function which one Print 1 first 1 sec > again 2 sec print 2 > again 3 sec print 3. for 10 times</b></summary>
+ <p>
+ 
+ > Possible solutions but not correct:
+ ```javascript
+function x() {
+    for (var i = 0; i <= 10; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, i * 1000);
+    }
+}
+x()
+output:
+6
+6
+6
+6
+.
+.
+.
+
+````
+
+its not working, because of closure. var x point all setTimeout function same memory location.
+
+> Possible solutions just using let
+```javaScript
+function x() {
+    for (let i = 0; i < 10; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, i * 1000);
+    }
+}
+x()
+
+output:
+1
+2
+3
+4
+.
+.
+```
+
+</p>
+</details>
+
 ### Temporal Dead Zone (TDZ) in JavaScript ( Time zone)
 
 In JavaScript, the temporal dead zone (TDZ) refers to the **period of time** during which a variable declared with the `let` or `const` keyword cannot be accessed or used. The TDZ begins at the point of declaration and ends when the variable is initialized with a value.
@@ -530,4 +589,28 @@ Variable declarations থেকে শুরু করে initializations হা
 ```javascript
 console.log(num); // ReferenceError: num is not defined
 let x = 23;
+````
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
+
+---
+
+<a name="undefined-vs-notdefined"></a>
+
+### Undefined VS Not defined in JavaScript
+
+-   Undefined:
+    It's a Placeholder for JavaScript which is place in the memory. It's not exactly a **placeholder in memory**; rather, it's a specific value that JavaScript uses to denote the absence of an assigned value. When a variable is created but not initialized, JavaScript **automatically** assigns it the value of undefined until a value is explicitly assigned to it. This is different from languages like **C or C++ where uninitialized variables can contain random or garbage values.**
+
+    > It's Take Memory Usage but not defined in JavaScript not use memory
+
+```javascript
+let a;
+console.log(a); // Output will be 'undefined'
 ```
+
+-   Not Defined: means not allocated memory in our Ram

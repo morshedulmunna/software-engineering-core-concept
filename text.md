@@ -13,7 +13,6 @@
 28. ->
 29. ***
 30. this keyword, call , apply() , bind()
-31. Normal function vs arrow function -> Main difference this keyword. in arrow function this always point outer scope object | where deacler the function.
 
 # Node Js
 

@@ -47,6 +47,9 @@ Output: 11, 12, 13;
     14. block scope
     15. Isn't there hoisting in let/const or function?
     16. Temporal Date zone -> it's time zone which one Create phase to before variable assign 
+
+
+    // Architecture
     17 Microtask -< the callback function from promise
     18 Promise
     19. Javascript Runtime Environment
