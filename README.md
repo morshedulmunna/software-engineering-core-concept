@@ -529,18 +529,17 @@ Another Example
 
 [!Important]
 
-<details>
- <summary><b>Create a Function which one Print 1 first 1 sec > again 2 sec print 2 > again 3 sec print 3. for 10 times</b></summary>
- <p>
- 
- > Possible solutions but not correct:
- ```javascript
+> Create a Function which one Print 1 first 1 sec > again 2 sec print 2 > again 3 sec print 3. for 10 times
+
+Possible solutions but not correct:
+
+```javascript
 function x() {
-    for (var i = 0; i <= 10; i++) {
-        setTimeout(function () {
-            console.log(i);
-        }, i * 1000);
-    }
+   for (var i = 0; i <= 10; i++) {
+       setTimeout(function () {
+           console.log(i);
+       }, i * 1000);
+   }
 }
 x()
 output:
@@ -551,19 +550,14 @@ output:
 .
 .
 .
-
-````
-
 its not working, because of closure. var x point all setTimeout function same memory location.
 
-> Possible solutions just using let
-```javaScript
 function x() {
-    for (let i = 0; i < 10; i++) {
-        setTimeout(function () {
-            console.log(i);
-        }, i * 1000);
-    }
+   for (let i = 0; i < 10; i++) {
+       setTimeout(function () {
+           console.log(i);
+       }, i * 1000);
+   }
 }
 x()
 
@@ -574,13 +568,11 @@ output:
 4
 .
 .
+
 ```
 
-</p>
-</details>
-
-
 <a name="temporal-dead"></a>
+
 ### Temporal Dead Zone (TDZ) in JavaScript ( Time zone)
 
 In JavaScript, the temporal dead zone (TDZ) refers to the **period of time** during which a variable declared with the `let` or `const` keyword cannot be accessed or used. The TDZ begins at the point of declaration and ends when the variable is initialized with a value.
@@ -592,7 +584,7 @@ Variable declarations থেকে শুরু করে initializations হা
 ```javascript
 console.log(num); // ReferenceError: num is not defined
 let x = 23;
-````
+```
 
 <div style="text-align: right;">
     <a href="#table">
@@ -617,5 +609,9 @@ console.log(a); // Output will be 'undefined'
 ```
 
 -   Not Defined: means not allocated memory in our Ram
+
+---
+
+---
 
 ### Asynchronous JavaScript & EVENT LOOP from scratch 🔥
