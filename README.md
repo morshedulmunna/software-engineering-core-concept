@@ -24,11 +24,11 @@
     -   [InvariantError](#invarianterror)
 -   [JavaScript Scope & Scope Chain](#javascript-scope-chain)
 
-# JavaScript
+# Learn JavaScript core Concept!
 
 ### How javaScript Work : <a name="javascript-execution-context"></a>
 
--   **Execution Context**
+#### **Execution Context**
 
 In JavaScript, the execution context refers to the environment in which the code is executed.
 
@@ -45,7 +45,7 @@ In JavaScript, the execution context refers to the environment in which the code
 
 ![execution-context](./readmeImage/context.png)
 
--   **Call Stack**<a name="call-stack"></a>
+### **Call Stack**<a name="call-stack"></a>
 
 The call stack in JavaScript is a mechanism used to keep track of the functions being executed in a program. It operates on a Last In, First Out (LIFO) basis, meaning that the last function that gets pushed onto the stack is the first one to be popped off and executed.
 
