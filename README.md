@@ -173,6 +173,7 @@ fetchData(displayData); // Outputs: Data received: Some data
 </div>
 
 **Parameters vs Arguments**<a name="parameters-vs-arguments"></a>
+
 Parameters are variables in a function definition, while arguments are the actual values passed to the function when it's invoked.
 
 ```plaintext
