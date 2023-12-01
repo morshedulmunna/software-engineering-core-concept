@@ -21,6 +21,7 @@
 -   [Variable Shadowing , let const [Solve memory leak problem]](#variable-shadowing)
 -   [JavaScript Hoisting](#javascript-hoisting)
 -   [JavaScript closure](#javascript-closure)
+-   [Temporal Dead Zone (TDZ) in JavaScript ( Time zone)](#temporal-dead)
 -   [undefined vs not Defined in JavaScript](#undefined-vs-notdefined)
 
 # Learn JavaScript core Concept!
@@ -578,6 +579,8 @@ output:
 </p>
 </details>
 
+
+<a name="temporal-dead"></a>
 ### Temporal Dead Zone (TDZ) in JavaScript ( Time zone)
 
 In JavaScript, the temporal dead zone (TDZ) refers to the **period of time** during which a variable declared with the `let` or `const` keyword cannot be accessed or used. The TDZ begins at the point of declaration and ends when the variable is initialized with a value.
