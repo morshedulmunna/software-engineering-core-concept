@@ -250,6 +250,7 @@ These errors can be caught using try...catch blocks in JavaScript to handle exce
 Before learning about scope , scope chain , or even closures , you need to understand the Lexical Environment .
 
 **What is Lexical Environments?**
+
 English “Lexical” means connection from outside in a certain order.
 
 A function’s “Lexical Environment” includes the function’s local memory plus its parent’s “Lexical Environment”.
@@ -310,3 +311,9 @@ These are the things that JS Engine looks for from the inside out, called Scope 
 Or to put it more simply, the Scope Chain is the chain of the Lexical Environments.
 
 **_Note: If the variable is not found in the local memory of the execution context , it will search the lexical environment until the end of the string._**
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
