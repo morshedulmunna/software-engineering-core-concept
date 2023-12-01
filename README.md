@@ -466,8 +466,20 @@ All done! 🎉 Quick recap:
 -   **Functions** and **variables** are stored in memory for an execution context before we execute our code. This is called hoisting.
 -   **Functions are stored with a reference** to the entire functions, variables with the **var keyword with the value of undefined**, and variables with the **let and const keyword are stored uninitialized**.
 
-> [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+> [!Interview Question]
+
+<details>
+  <summary><b>Isn't there hoisting in let/const or function?</b></summary>
+  
+  <p >
+Variables declared with var are hoisted to the top of their scope and initialized with a value of `undefined`. This means you can access var variables before they're actually declared in the code.
+
+However, variables declared with let and const are also hoisted to the top of their scope but are not initialized. They're in a **_"temporal dead zone"_** until the actual declaration is encountered in the code. Accessing let and const variables before their declaration results in a `ReferenceError`.
+
+For functions, **function declarations are hoisted entirely**, so you can call a function declared using function myFunction() before its actual placement in the code. However, function expressions, such as arrow functions or functions assigned to variables using const, are not hoisted in the same way. They behave similarly to let and const variables in terms of hoisting.
+
+  </p>
+</details>
 
 ---
 
