@@ -246,4 +246,4 @@ Scope can be defined as the space in which variables and statements are accessib
 -   There is only one global scope in the program
 -   It is the top scope that englobes the entire code
 -   The declarations inside this space can be accessed anywhere in the code
-    ![Alt text](image.png)
+    ![global-scope](./readmeImage/image.png)
