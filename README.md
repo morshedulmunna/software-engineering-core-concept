@@ -1,4 +1,4 @@
-## Table of Contents
+## Table of Contents <a name="table"></a>
 
 -   [JavaScript Execution Context](#javascript-execution-context)
     -   [Parts](#parts)
@@ -29,15 +29,21 @@
 ### How javaScript Work : <a name="javascript-execution-context"></a>
 
 -   Execution Context
-    -   Parts
+    -   Parts<a name="parts"></a>
         -   Memory Component or variable environment
         -   Code Component or thread of execution
-    -   Phase
+    -   Phase<a name="phases"></a>
         -   Creation Phase or memory creation phase
         -   Execution phase or code execution phase
--   Call Stack
+-   Call Stack<a name="call-stack"></a>
     The call stack in JavaScript is a mechanism used to keep track of the functions being executed in a program. It operates on a Last In, First Out (LIFO) basis, meaning that the last function that gets pushed onto the stack is the first one to be popped off and executed.
     When a function is called in JavaScript, it's added to the call stack. As functions are executed, they are removed from the stack. If a function calls another function, the new function gets added on top of the previous one, forming a stack of function calls. When a function finishes executing, it is removed from the stack, and the control returns to the previous function in the stack.
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>go to top</button>
+    </a>
+</div>
 
 ### Function Details :
 
@@ -50,6 +56,12 @@ function greet() {
     console.log("Hello!");
 }
 ```
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>go to top</button>
+    </a>
+</div>
 
 **Function Expression**
 A function expression stores a function as a value in a variable.
@@ -64,6 +76,12 @@ var greet = () => {
     console.log("Hello!");
 }
 ```
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>go to top</button>
+    </a>
+</div>
 
 **Anonymous Function**
 An anonymous function doesn't have a name; it's assigned to a variable without a specific name.
@@ -83,6 +101,12 @@ An IIFE runs immediately after it's defined, encapsulating its scope.
     console.log("IIFE running!");
 })();
 ```
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>go to top</button>
+    </a>
+</div>
 
 **Arrow Function**
 Arrow functions provide a more concise syntax for writing functions.
@@ -105,6 +129,12 @@ const multiply = (a, b) => {
 
 **First-Class Function or Higher-Order Function**
 Functions are treated as first-class citizens; they can be assigned as values, passed as arguments, and returned from other functions. or Received functions as a parameter and return a function.
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>go to top</button>
+    </a>
+</div>
 
 ```javascript
 function sayName(name) {
@@ -135,6 +165,12 @@ function displayData(data) {
 
 fetchData(displayData); // Outputs: Data received: Some data
 ```
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>go to top</button>
+    </a>
+</div>
 
 **Parameters vs Arguments**
 Parameters are variables in a function definition, while arguments are the actual values passed to the function when it's invoked.
