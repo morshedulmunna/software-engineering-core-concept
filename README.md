@@ -19,6 +19,7 @@
     -   [AggregateError](#aggregateerror)
 -   [JavaScript Scope & Scope Chain](#javascript-scope-chain)
 -   [Javascript closure](#javascript-closure)
+-   [Variable Shadowing , let const [Solve memory leak problem]](#variable-shadowing)
 
 # Learn JavaScript core Concept!
 
@@ -336,15 +337,15 @@ Another Example
     </a>
 </div>
 
-### Variable Shadowing , let const [Solve memory leak problem]
+### Variable Shadowing , let const [Solve memory leak problem] <a name="variable-shadowing"></a>
 
 at first, need to understand why needs **let** **const** variables. what is the problem in **var** keyword
 let's see the code below,
 
-```
+```javascript
 var x = 90
 {
- var x = 80
+ var x = 80 //global x pointer point same memory location
  console.log(x)
 }
 console.log(x)
@@ -357,7 +358,7 @@ output:
  here x shadows the global x variables
 ```
 
-When you declare a variable using var within a block (like within {}), it doesn't create a new block scope; instead, it modifies the existing variable of the same name in the outer scope. This behavior can lead to unexpected results, as you rightly pointed out.
+When you declare a variable using **var** within a block (like within {}), it doesn't create a new block scope; instead, it modifies the existing variable of the same name in the outer scope. This behavior can lead to unexpected results, as you rightly pointed out.
 
 The introduction of `let` and `const` in ES6 provides a solution to this problem by introducing block-scoped variables:
 
@@ -368,14 +369,13 @@ By using `let` or `const`, you can avoid variable shadowing and prevent unintent
 
 In your example, using `let` or `const` instead of `var` would resolve the issue:
 
-```
+```javascript
 let x = 90; // or const x = 90; if it's not meant to be reassigned
 {
-  let x = 80; // This x is in a different scope
-  console.log(x); // Outputs 80
+    let x = 80; // This x is in a different scope
+    console.log(x); // Outputs 80
 }
 console.log(x); // Outputs 90
-
 ```
 
 This way, the variable x within the block has its own scope and doesn't affect the outer x variable, thereby preventing unintended behavior and potential memory leaks.
@@ -384,7 +384,49 @@ This way, the variable x within the block has its own scope and doesn't affect t
 
 ![Alt text](./readmeImage/variable.png)
 
+**Block Scope Shadowing with let or const:**
+
+```javascript
+let a = 10;
+{
+    let a = 20; // This is legal and creates a new 'a' variable within this block scope
+    console.log(a); // Output: 20
+}
+console.log(a); // Output: 10 (Global 'a' remains unaffected)
+```
+
+**Function Scope Shadowing with var:**
+
+```javascript
+var b = 15;
+function example() {
+    var b = 25; // This is legal and creates a new 'b' variable within this function scope
+    console.log(b); // Output: 25
+}
+example();
+console.log(b); // Output: 15 (Global 'b' remains unaffected)
+```
+
+**_Illegal Variable Shadowing:_**
+
+**Block Scope Illegal Shadowing let/const with var:**
+
+```javascript
+let c = 30;
+{
+    var c = 40; // Illegal - 'var' cannot shadow 'let' or 'const' within the same scope
+    console.log(c); // This will cause an error
+}
+console.log(c);
+```
+
 **Is variable shadowing good or bad?**
 If we already had some variable and we shadowed it inside another scope, we are losing access to the original variable and will not receive the output we need inside another scope. Shadowing can lead to unneeded bugs and results and will be harder to debug when you have many variables.
 
 That’s why it’s always better to name variables in a more explanatory way
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
