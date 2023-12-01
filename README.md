@@ -1,8 +1,7 @@
 ## Table of Contents <a name="table"></a>
 
 -   [JavaScript Execution Context](#javascript-execution-context)
-    -   [Parts](#parts)
-    -   [Phases](#phases)
+
 -   [Call Stack](#call-stack)
 -   [Function Details](#function-details)
     -   [Function Declaration or Function Statement](#function-declaration-or-function-statement)
@@ -29,16 +28,30 @@
 
 ### How javaScript Work : <a name="javascript-execution-context"></a>
 
--   Execution Context
-    -   Parts<a name="parts"></a>
-        -   Memory Component or variable environment
-        -   Code Component or thread of execution
-    -   Phase<a name="phases"></a>
-        -   Creation Phase or memory creation phase
-        -   Execution phase or code execution phase
--   Call Stack<a name="call-stack"></a>
-    The call stack in JavaScript is a mechanism used to keep track of the functions being executed in a program. It operates on a Last In, First Out (LIFO) basis, meaning that the last function that gets pushed onto the stack is the first one to be popped off and executed.
-    When a function is called in JavaScript, it's added to the call stack. As functions are executed, they are removed from the stack. If a function calls another function, the new function gets added on top of the previous one, forming a stack of function calls. When a function finishes executing, it is removed from the stack, and the control returns to the previous function in the stack.
+-   **Execution Context**
+
+In JavaScript, the execution context refers to the environment in which the code is executed.
+
+**Global Execution Context:** This is the default execution context. When the JavaScript code is executed, the global execution context is created in the call stack, which contains global variables and functions. It's essentially the environment where code that isn't inside any function is executed.
+
+**Function Execution Context:** Every time a function is invoked, a new execution context is created for that function. It includes information about the function's arguments, local variables, and any nested functions declared within it. When a function is called, a new function execution context is pushed onto the execution stack.
+
+-   Parts of Each Execution Context :
+    -   Memory Component or variable environment
+    -   Code Component or thread of execution
+-   Phase of Each Execution Context :
+    -   Creation Phase or memory creation phase
+    -   Execution phase or code execution phase
+
+![execution-context](./readmeImage/context.png)
+
+-   **Call Stack**<a name="call-stack"></a>
+
+The call stack in JavaScript is a mechanism used to keep track of the functions being executed in a program. It operates on a Last In, First Out (LIFO) basis, meaning that the last function that gets pushed onto the stack is the first one to be popped off and executed.
+
+When a function is called in JavaScript, it's added to the call stack. As functions are executed, they are removed from the stack. If a function calls another function, the new function gets added on top of the previous one, forming a stack of function calls. When a function finishes executing, it is removed from the stack, and the control returns to the previous function in the stack.
+
+![call-stack](./readmeImage//call-back.png)
 
 <div style="text-align: right;">
     <a href="#table">
