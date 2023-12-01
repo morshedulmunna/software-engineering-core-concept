@@ -247,6 +247,25 @@ These errors can be caught using try...catch blocks in JavaScript to handle exce
 
 ### JavaScript Scope & Scope Chain <a name="javascript-scope-chain"></a>
 
+Before learning about scope , scope chain , or even closures , you need to understand the Lexical Environment .
+
+**What is Lexical Environments?**
+English “Lexical” means connection from outside in a certain order.
+
+A function’s “Lexical Environment” includes the function’s local memory plus its parent’s “Lexical Environment”.
+
+For example, the above function y is nested inside the function x ( y is a child of x ), and the function x is inside the global scope ( x is a child of global ).
+
+Also called y is lexically inside the x function. x is lexically inside global .
+
+As soon as an “Execution Context” is initialized, a “Lexical Environment” is also initialized.
+
+Let’s see the corresponding parent’s lexical environment in the example above:
+
+![lexical-enviroment](./readmeImage/laxi-env.png)
+
+Now, lets go to deep drive on Scope and Scope chain,
+**What is Scope?**
 Scope can be defined as the space in which variables and statements are accessible. In JavaScript we have three types of scope:
 
 -   Global scope,
@@ -272,3 +291,22 @@ In the example below we are able to print the variable msgOne but not constant m
 On the other hand **var** is function scope so can be accessed within the function.
 
 ![block-scope](./readmeImage/block-scope.png)
+
+let's talk about scope chaining............
+
+**SCOPE CHAIN**
+
+![lexical-enviroment](./readmeImage/laxi-env.png)
+Looking at the image above, can you see how the program looks up the values ​​of the variable?
+
+The search order will be from the **purple ring** of **_Y_** to the purple ring of **_x_** and then to the purple ring of global and still not found, it will encounter null and end this search.
+
+Assuming c does not exist at the violet ring x as above, the program will continue to look for the purple rings y , then global .
+
+If it is still not found, an error will be reported. If it is found somewhere first, then the local value will be used.
+
+These are the things that JS Engine looks for from the inside out, called Scope Chain .
+
+Or to put it more simply, the Scope Chain is the chain of the Lexical Environments.
+
+**_Note: If the variable is not found in the local memory of the execution context , it will search the lexical environment until the end of the string._**
