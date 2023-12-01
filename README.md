@@ -45,9 +45,9 @@
     </a>
 </div>
 
-### Function Details :
+### Function Details :<a name="function-details"></a>
 
-**Function Declaration or Function Statement**
+**Function Declaration or Function Statement**<a name="function-declaration-or-function-statement"></a>
 This is a basic way to declare a function using the `function` keyword. or arrow function. it's just declared as a function never call. when it's called that means it's invoked.
 
 ```plaintext
@@ -63,7 +63,7 @@ function greet() {
     </a>
 </div>
 
-**Function Expression**
+**Function Expression**<a name="function-expression"></a>
 A function expression stores a function as a value in a variable.
 
 ```plaintext
@@ -83,7 +83,7 @@ var greet = () => {
     </a>
 </div>
 
-**Anonymous Function**
+**Anonymous Function**<a name="anonymous-function"></a>
 An anonymous function doesn't have a name; it's assigned to a variable without a specific name.
 
 ```plaintext
@@ -93,7 +93,7 @@ const add = function(a, b) {
 };
 ```
 
-**IIFE (Immediately Invoked Function Expression)**
+**IIFE (Immediately Invoked Function Expression)**<a name="iife-immediately-invoked-function-expression"></a>
 An IIFE runs immediately after it's defined, encapsulating its scope.
 
 ```plaintext
@@ -108,7 +108,7 @@ An IIFE runs immediately after it's defined, encapsulating its scope.
     </a>
 </div>
 
-**Arrow Function**
+**Arrow Function**<a name="arrow-function"></a>
 Arrow functions provide a more concise syntax for writing functions.
 
 ```plaintext
@@ -127,7 +127,7 @@ const multiply = (a, b) => {
 | `prototype` property | Does not have a `prototype` property                                                     | Has a `prototype` property for object creation             |
 | Implicit return      | Can implicitly return a value if single expression                                       | Explicit `return` statement needed                         |
 
-**First-Class Function or Higher-Order Function**
+**First-Class Function or Higher-Order Function**<a name="first-class-function-or-higher-order-function"></a>
 Functions are treated as first-class citizens; they can be assigned as values, passed as arguments, and returned from other functions. or Received functions as a parameter and return a function.
 
 <div style="text-align: right;">
@@ -146,7 +146,7 @@ const greeting = sayName("Alice");
 greeting(); // Outputs: Hello, Alice!
 ```
 
-**Callback Function**
+**Callback Function**<a name="callback-function"></a>
 A callback function is passed as an argument to another function and executed after an operation is completed.
 
 ```plaintext
@@ -168,13 +168,11 @@ fetchData(displayData); // Outputs: Data received: Some data
 
 <div style="text-align: right;">
     <a href="#table">
-        <button style="background-color: blue; color: white; padding: 2px 6px; border: none; border-radius: 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; margin: 4px 2px; transition-duration: 0.4s; cursor: pointer; float: right;">
-            Go to top
-        </button>
+        <button>Go to top</button>
     </a>
 </div>
 
-**Parameters vs Arguments**
+**Parameters vs Arguments**<a name="parameters-vs-arguments"></a>
 Parameters are variables in a function definition, while arguments are the actual values passed to the function when it's invoked.
 
 ```plaintext
@@ -186,26 +184,26 @@ function addNumbers(x, y) { // x and y are parameters
 const result = addNumbers(3, 5); // 3 and 5 are arguments
 ```
 
-## JavaScript Errors
+## JavaScript Errors<a name="javascript-errors"></a>
 
 Certainly! JavaScript has various types of errors that can occur during code execution. Here's an overview of some common errors:
 
-**ReferenceError:**
+**ReferenceError:**<a name="referenceerror"></a>
 This error occurs when trying to use a variable that has not been declared or is not within the current scope. For instance, accessing a variable that doesn't exist will result in a ReferenceError.
 
-**SyntaxError:**
+**SyntaxError:**<a name="syntaxerror"></a>
 This error occurs when there's a mistake in the syntax of the code, making it impossible for the interpreter to parse correctly. Common examples include missing brackets, semicolons, or incorrect keywords.
 
-**TypeError:**
+**TypeError:**<a name="typeerror"></a>
 This error occurs when a value is not of the expected type. For instance, attempting to call a method on a variable that is not a function will result in a TypeError.
 
-**RangeError:**
+**RangeError:**<a name="rangeerror"></a>
 This error occurs when a numeric value is not within the expected range. For instance, trying to create an array with a negative length will result in a RangeError.
 
-**URIError:**
+**URIError:**<a name="urierror"></a>
 This error occurs when there's a problem with encodeURI(), decodeURI(), encodeURIComponent(), or decodeURIComponent(). For example, passing an invalid parameter to these functions will result in a URIError.
 
-**AggregateError:**
+**AggregateError:**<a name="aggregateerror"></a>
 Introduced in ES2020, it's used to represent multiple errors in the context of operations like Promise.allSettled() or Promise.any(). This error aggregates several errors into a single object, allowing handling multiple errors simultaneously.
 \_\_\_access Errors using:\_\_\_
 
@@ -223,13 +221,13 @@ try{
     </a>
 </div>
 
-**InternalError:**
+**InternalError:**<a name="internalerror"></a>
 This error occurs when an internal error in the JavaScript engine occurs. It's typically non-standard and might not be encountered frequently in regular coding.
 
-**EvalError:**
+**EvalError:**<a name="evalerror"></a>
 This error is not commonly used. It was intended to handle errors in the deprecated **eval()** function.
 
-**InvariantError:**
+**InvariantError:**<a name="invarianterror"></a>
 An error thrown when an invariant condition is violated. It's often used in development environments to signal logical errors in code.
 
 These errors can be caught using try...catch blocks in JavaScript to handle exceptional cases gracefully. Each type of error provides specific information that can be helpful for debugging, allowing developers to identify and fix issues in their code effectively.

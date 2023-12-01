@@ -1,19 +1,3 @@
-2. Call Stack
-3. Function
-    1. Function declaration or function statement
-    2. function expression -> when store a variable
-    3. anonymous function -> no name this function
-    4. IIFE (Immediate invoked function expression)
-    5. Arrow function
-    6. fist class function or higher order function
-       7.callback function
-       8.parameters vs arguments
-4. hoisting -> When allocating Memory before Execution phase ( var, let, const, function)
-5. Primitive vs non-primitive Data types
-6. Errors:
-    1. Reference Error: "\_\_" is Not Defined -> No any key in lexical environment
-    2. Reference Error: "\_\_" Can't assess before declaration ->(temporary Dead zone)
-    3. Type Error: "\_\_" -> when try to mutate a const variable
 7. Scope
 8. Scope chain -> {Lexical Env Chaining }
 9. lexical Environment -> Execution context er memory component + Parent execution context er lexical Environment
