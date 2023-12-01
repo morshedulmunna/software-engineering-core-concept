@@ -23,6 +23,7 @@
     -   [InternalError](#internalerror)
     -   [EvalError](#evalerror)
     -   [InvariantError](#invarianterror)
+-   [JavaScript Scope & Scope Chain](#javascript-scope-chain)
 
 # JavaScript
 
@@ -58,12 +59,6 @@ function greet() {
 }
 ```
 
-<div style="text-align: right;">
-    <a href="#table">
-        <button>Go to top</button>
-    </a>
-</div>
-
 **Function Expression** : <a name="function-expression"></a>
 
 A function expression stores a function as a value in a variable.
@@ -79,10 +74,10 @@ var greet = () => {
 }
 ```
 
-<div style="text-align: right;">
     <a href="#table">
         <button>Go to top</button>
     </a>
+
 </div>
 
 **Anonymous Function** : <a name="anonymous-function"></a>
@@ -105,12 +100,6 @@ An IIFE runs immediately after it's defined, encapsulating its scope.
     console.log("IIFE running!");
 })();
 ```
-
-<div style="text-align: right;">
-    <a href="#table">
-        <button>Go to top</button>
-    </a>
-</div>
 
 **Arrow Function** : <a name="arrow-function"></a>
 
@@ -135,12 +124,6 @@ const multiply = (a, b) => {
 **First-Class Function or Higher-Order Function** : <a name="first-class-function-or-higher-order-function"></a>
 
 Functions are treated as first-class citizens; they can be assigned as values, passed as arguments, and returned from other functions. or Received functions as a parameter and return a function.
-
-<div style="text-align: right;">
-    <a href="#table">
-        <button>Go to top</button>
-    </a>
-</div>
 
 ```javascript
 function sayName(name) {
@@ -173,12 +156,6 @@ function displayData(data) {
 fetchData(displayData); // Outputs: Data received: Some data
 ```
 
-<div style="text-align: right;">
-    <a href="#table">
-        <button>Go to top</button>
-    </a>
-</div>
-
 **Parameters vs Arguments**: <a name="parameters-vs-arguments"></a>
 
 Parameters are variables in a function definition, while arguments are the actual values passed to the function when it's invoked.
@@ -191,6 +168,12 @@ function addNumbers(x, y) { // x and y are parameters
 
 const result = addNumbers(3, 5); // 3 and 5 are arguments
 ```
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
 
 ## JavaScript Errors<a name="javascript-errors"></a>
 
@@ -229,12 +212,6 @@ try{
 }
 ```
 
-<div style="text-align: right;">
-    <a href="#table">
-        <button>Go to top</button>
-    </a>
-</div>
-
 **InternalError:**<a name="internalerror"></a>
 
 This error occurs when an internal error in the JavaScript engine occurs. It's typically non-standard and might not be encountered frequently in regular coding.
@@ -254,3 +231,19 @@ These errors can be caught using try...catch blocks in JavaScript to handle exce
         <button>Go to top</button>
     </a>
 </div>
+
+### JavaScript Scope & Scope Chain <a name="javascript-scope-chain"></a>
+
+Scope can be defined as the space in which variables and statements are accessible. In JavaScript we have three types of scope:
+
+-   Global scope,
+-   Function/local scope (Script)
+-   Block scope.
+
+**Global scope :**
+
+-   The default scope
+-   There is only one global scope in the program
+-   It is the top scope that englobes the entire code
+-   The declarations inside this space can be accessed anywhere in the code
+    ![Alt text](image.png)
