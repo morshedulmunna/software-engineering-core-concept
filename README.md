@@ -47,7 +47,8 @@
 
 ### Function Details :<a name="function-details"></a>
 
-**Function Declaration or Function Statement**<a name="function-declaration-or-function-statement"></a>
+**Function Declaration or Function Statement** : <a name="function-declaration-or-function-statement"></a>
+
 This is a basic way to declare a function using the `function` keyword. or arrow function. it's just declared as a function never call. when it's called that means it's invoked.
 
 ```plaintext
@@ -63,7 +64,8 @@ function greet() {
     </a>
 </div>
 
-**Function Expression**<a name="function-expression"></a>
+**Function Expression** : <a name="function-expression"></a>
+
 A function expression stores a function as a value in a variable.
 
 ```plaintext
@@ -83,7 +85,8 @@ var greet = () => {
     </a>
 </div>
 
-**Anonymous Function**<a name="anonymous-function"></a>
+**Anonymous Function** : <a name="anonymous-function"></a>
+
 An anonymous function doesn't have a name; it's assigned to a variable without a specific name.
 
 ```plaintext
@@ -93,7 +96,8 @@ const add = function(a, b) {
 };
 ```
 
-**IIFE (Immediately Invoked Function Expression)**<a name="iife-immediately-invoked-function-expression"></a>
+**IIFE (Immediately Invoked Function Expression)** : <a name="iife-immediately-invoked-function-expression"></a>
+
 An IIFE runs immediately after it's defined, encapsulating its scope.
 
 ```plaintext
@@ -108,7 +112,8 @@ An IIFE runs immediately after it's defined, encapsulating its scope.
     </a>
 </div>
 
-**Arrow Function**<a name="arrow-function"></a>
+**Arrow Function** : <a name="arrow-function"></a>
+
 Arrow functions provide a more concise syntax for writing functions.
 
 ```plaintext
@@ -127,7 +132,8 @@ const multiply = (a, b) => {
 | `prototype` property | Does not have a `prototype` property                                                     | Has a `prototype` property for object creation             |
 | Implicit return      | Can implicitly return a value if single expression                                       | Explicit `return` statement needed                         |
 
-**First-Class Function or Higher-Order Function**<a name="first-class-function-or-higher-order-function"></a>
+**First-Class Function or Higher-Order Function** : <a name="first-class-function-or-higher-order-function"></a>
+
 Functions are treated as first-class citizens; they can be assigned as values, passed as arguments, and returned from other functions. or Received functions as a parameter and return a function.
 
 <div style="text-align: right;">
@@ -146,7 +152,8 @@ const greeting = sayName("Alice");
 greeting(); // Outputs: Hello, Alice!
 ```
 
-**Callback Function**<a name="callback-function"></a>
+**Callback Function** :<a name="callback-function"></a>
+
 A callback function is passed as an argument to another function and executed after an operation is completed.
 
 ```plaintext
@@ -172,7 +179,7 @@ fetchData(displayData); // Outputs: Data received: Some data
     </a>
 </div>
 
-**Parameters vs Arguments**<a name="parameters-vs-arguments"></a>
+**Parameters vs Arguments**: <a name="parameters-vs-arguments"></a>
 
 Parameters are variables in a function definition, while arguments are the actual values passed to the function when it's invoked.
 
@@ -190,21 +197,27 @@ const result = addNumbers(3, 5); // 3 and 5 are arguments
 Certainly! JavaScript has various types of errors that can occur during code execution. Here's an overview of some common errors:
 
 **ReferenceError:**<a name="referenceerror"></a>
+
 This error occurs when trying to use a variable that has not been declared or is not within the current scope. For instance, accessing a variable that doesn't exist will result in a ReferenceError.
 
 **SyntaxError:**<a name="syntaxerror"></a>
+
 This error occurs when there's a mistake in the syntax of the code, making it impossible for the interpreter to parse correctly. Common examples include missing brackets, semicolons, or incorrect keywords.
 
 **TypeError:**<a name="typeerror"></a>
+
 This error occurs when a value is not of the expected type. For instance, attempting to call a method on a variable that is not a function will result in a TypeError.
 
 **RangeError:**<a name="rangeerror"></a>
+
 This error occurs when a numeric value is not within the expected range. For instance, trying to create an array with a negative length will result in a RangeError.
 
 **URIError:**<a name="urierror"></a>
+
 This error occurs when there's a problem with encodeURI(), decodeURI(), encodeURIComponent(), or decodeURIComponent(). For example, passing an invalid parameter to these functions will result in a URIError.
 
 **AggregateError:**<a name="aggregateerror"></a>
+
 Introduced in ES2020, it's used to represent multiple errors in the context of operations like Promise.allSettled() or Promise.any(). This error aggregates several errors into a single object, allowing handling multiple errors simultaneously.
 \_\_\_access Errors using:\_\_\_
 
@@ -223,12 +236,15 @@ try{
 </div>
 
 **InternalError:**<a name="internalerror"></a>
+
 This error occurs when an internal error in the JavaScript engine occurs. It's typically non-standard and might not be encountered frequently in regular coding.
 
 **EvalError:**<a name="evalerror"></a>
+
 This error is not commonly used. It was intended to handle errors in the deprecated **eval()** function.
 
 **InvariantError:**<a name="invarianterror"></a>
+
 An error thrown when an invariant condition is violated. It's often used in development environments to signal logical errors in code.
 
 These errors can be caught using try...catch blocks in JavaScript to handle exceptional cases gracefully. Each type of error provides specific information that can be helpful for debugging, allowing developers to identify and fix issues in their code effectively.
