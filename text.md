@@ -1,7 +1,5 @@
-12. memory leaking problem -> solve it then came to ES6 Let and const
-13. let / const
-
 14. block={} or Component Statement -> (Combine or grouping of multiple statements) if()\_block or Statement | {{{}}}-> lexical Environment working also
+
 15. Block scope - > (what all variable or statement access in the block that is the scope,/ let and const hoisted in the block scope | Block scope complete execution end then it's gone)
 
 16. Isn't there hoisting in let/const or function?

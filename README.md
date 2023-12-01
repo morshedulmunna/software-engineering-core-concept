@@ -275,6 +275,14 @@ Scope can be defined as the space in which variables and statements are accessib
 -   Applicable to let and const
 -   Declarations are only accessible inside the block
 
+```java
+{ //block start
+    statement1;
+    statement2;
+    // ... more statements
+} // block end
+```
+
 In the example below we are able to print the variable msgOne but not constant msgTwo. As mentioned before **const** and **let** are block scoped so they are only visible inside the block, in this case inside the if statement.
 
 On the other hand **var** is function scope so can be accessed within the function.
@@ -419,6 +427,35 @@ let c = 30;
 }
 console.log(c);
 ```
+
+**JavaScript Scoping and Variable Declaration: Understanding Block Scope and Shadowing**
+
+```javascript
+{
+    let x = 90;
+
+    {
+        let y = 50;
+        console.log(x); // 90
+        {
+            console.log(y); // 50
+            const x = "Happy Day";
+            {
+                console.log(x); // happy day
+            }
+        }
+    }
+    console.log(x); // 90
+}
+//Output:
+Happy Day;
+90;
+50;
+Happy Day;
+90;
+```
+
+Remember, JavaScript follows **lexical scoping rules**, where inner scopes have access to variables defined in outer scopes, but redeclaring variables within inner scopes creates new variables that only exist within those inner scopes.
 
 **Is variable shadowing good or bad?**
 If we already had some variable and we shadowed it inside another scope, we are losing access to the original variable and will not receive the output we need inside another scope. Shadowing can lead to unneeded bugs and results and will be harder to debug when you have many variables.
