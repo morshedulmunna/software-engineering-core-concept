@@ -41,7 +41,7 @@
 
 <div style="text-align: right;">
     <a href="#table">
-        <button>go to top</button>
+        <button>Go to top</button>
     </a>
 </div>
 
@@ -59,7 +59,7 @@ function greet() {
 
 <div style="text-align: right;">
     <a href="#table">
-        <button>go to top</button>
+        <button>Go to top</button>
     </a>
 </div>
 
@@ -79,7 +79,7 @@ var greet = () => {
 
 <div style="text-align: right;">
     <a href="#table">
-        <button>go to top</button>
+        <button>Go to top</button>
     </a>
 </div>
 
@@ -104,7 +104,7 @@ An IIFE runs immediately after it's defined, encapsulating its scope.
 
 <div style="text-align: right;">
     <a href="#table">
-        <button>go to top</button>
+        <button>Go to top</button>
     </a>
 </div>
 
@@ -132,7 +132,7 @@ Functions are treated as first-class citizens; they can be assigned as values, p
 
 <div style="text-align: right;">
     <a href="#table">
-        <button>go to top</button>
+        <button>Go to top</button>
     </a>
 </div>
 
@@ -168,7 +168,7 @@ fetchData(displayData); // Outputs: Data received: Some data
 
 <div style="text-align: right;">
     <a href="#table">
-        <button>go to top</button>
+        <button>Go to top</button>
     </a>
 </div>
 
@@ -215,6 +215,12 @@ try{
 }
 ```
 
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
+
 **InternalError:**
 This error occurs when an internal error in the JavaScript engine occurs. It's typically non-standard and might not be encountered frequently in regular coding.
 
@@ -225,3 +231,9 @@ This error is not commonly used. It was intended to handle errors in the depreca
 An error thrown when an invariant condition is violated. It's often used in development environments to signal logical errors in code.
 
 These errors can be caught using try...catch blocks in JavaScript to handle exceptional cases gracefully. Each type of error provides specific information that can be helpful for debugging, allowing developers to identify and fix issues in their code effectively.
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
