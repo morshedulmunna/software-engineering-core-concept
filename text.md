@@ -1,5 +1,4 @@
-16.
-17. Temporal Date zone -> it's time zone which one Create phase to before variable assign
+17. Temporal Dead zone -> it's time zone which one Create phase to before variable assign
 18. Micro Task -> the callback function from promise
 19. Promise
 20. JavaScript Runtime Environment (browser environment, nodejs Environment)

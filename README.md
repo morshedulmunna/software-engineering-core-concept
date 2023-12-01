@@ -513,3 +513,17 @@ Another Example
         <button>Go to top</button>
     </a>
 </div>
+
+---
+
+### Temporal Dead Zone (TDZ) in JavaScript ( Time zone)
+
+In JavaScript, the temporal dead zone (TDZ) refers to the **period of time** during which a variable declared with the `let` or `const` keyword cannot be accessed or used. The TDZ begins at the point of declaration and ends when the variable is initialized with a value.
+[!Important]
+Variable declarations থেকে শুরু করে initializations হাওয়ার আগে মুহুর্ত পর্যন্ত সময়কে TDZ বলে। এই সময় এর মধ্যে যদি কোন variables কে access করতে চাই তাহলে তা `ReferenceError: __ is not defined` দিয়ে থাকে।
+বিদ্রঃ এটা শুধু মাত্র `let & const` এর সময় হয়ে থাকে। var এ কোন সময় হয় না।
+
+```javascript
+console.log(num); // ReferenceError: num is not defined
+let x = 23;
+```
