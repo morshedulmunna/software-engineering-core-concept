@@ -1,4 +1,4 @@
-16. Isn't there hoisting in let/const or function?
+16.
 17. Temporal Date zone -> it's time zone which one Create phase to before variable assign
 18. Micro Task -> the callback function from promise
 19. Promise

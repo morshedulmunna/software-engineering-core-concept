@@ -466,6 +466,17 @@ All done! 🎉 Quick recap:
 -   **Functions** and **variables** are stored in memory for an execution context before we execute our code. This is called hoisting.
 -   **Functions are stored with a reference** to the entire functions, variables with the **var keyword with the value of undefined**, and variables with the **let and const keyword are stored uninitialized**.
 
+ <p style="background-color: red; padding: 10px; font:bold; color:white; border-radius: 10px">
+    Inter view Question: 
+  </p>
+<details>
+  <summary><b>Isn't there hoisting in let/const or function?</b></summary>
+  
+  <p style="padding: 10px; border:1px solid gray; border-radius: 10px">
+    No, there isn't hoisting in `let` or `const` declarations as there is with `var` in JavaScript. When you use `let` or `const`, they are hoisted to what's called the "Temporal Dead Zone" (TDZ) and are not accessible before their declaration in the code.
+  </p>
+</details>
+
 ---
 
 ### JavaScript Closure <a name="javascript-closure"></a>
