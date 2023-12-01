@@ -23,7 +23,9 @@
 
 # Learn JavaScript core Concept!
 
-### How javaScript Work : <a name="javascript-execution-context"></a>
+<a name="javascript-execution-context"></a>
+
+### How javaScript Work :
 
 #### **Execution Context**
 
@@ -322,7 +324,9 @@ Or to put it more simply, the Scope Chain is the chain of the Lexical Environmen
 
 ---
 
-### Variable Shadowing , let const [Solve memory leak problem] <a name="variable-shadowing"></a>
+<a name="variable-shadowing"></a>
+
+### Variable Shadowing , let const [Solve memory leak problem]
 
 at first, need to understand why needs **let** **const** variables. what is the problem in **var** keyword
 let's see the code below,
