@@ -168,7 +168,9 @@ fetchData(displayData); // Outputs: Data received: Some data
 
 <div style="text-align: right;">
     <a href="#table">
-        <button>Go to top</button>
+        <button style="background-color: blue; color: white; padding: 2px 6px; border: none; border-radius: 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; margin: 4px 2px; transition-duration: 0.4s; cursor: pointer; float: right;">
+            Go to top
+        </button>
     </a>
 </div>
 
