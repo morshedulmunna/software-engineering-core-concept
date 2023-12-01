@@ -23,6 +23,7 @@
     -   [EvalError](#evalerror)
     -   [InvariantError](#invarianterror)
 -   [JavaScript Scope & Scope Chain](#javascript-scope-chain)
+-   [Javascript closure](#javascript-closure)
 
 # Learn JavaScript core Concept!
 
@@ -298,7 +299,7 @@ let's talk about scope chaining............
 **SCOPE CHAIN**
 
 ![lexical-enviroment](./readmeImage/laxi-env.png)
-Looking at the image above, can you see how the program looks up the values ​​of the variable?
+Looking at the image, can you see how the program looks up the values ​​of the variable?
 
 The search order will be from the **purple ring** of **_Y_** to the purple ring of **_x_** and then to the purple ring of global and still not found, it will encounter null and end this search.
 
@@ -317,3 +318,28 @@ Or to put it more simply, the Scope Chain is the chain of the Lexical Environmen
         <button>Go to top</button>
     </a>
 </div>
+
+### JavaScript Closure <a name="javascript-closure"></a>
+
+A closure is the combination of a **function bundled together (enclosed) with references to its surrounding state (the lexical environment).** In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, **_closures are created every time a function is created, at function creation time._**
+
+```JavaScript
+function outer() {
+    let b = 1;
+    function inner() {
+        return b;
+    }
+    return inner;
+}
+let get_func_inner = outer(); //here create closure outer function
+
+/* how can access b after returning a outer function.
+normally it's could not be access b because outer function return
+then it's not stay in call stack and memory.
+but it's still accessible because of javaScript closure*/
+console.log(get_func_inner());
+
+```
+
+Another Example
+![js-closure](./readmeImage/closure.png)
