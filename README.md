@@ -617,3 +617,5 @@ console.log(a); // Output will be 'undefined'
 ```
 
 -   Not Defined: means not allocated memory in our Ram
+
+### Asynchronous JavaScript & EVENT LOOP from scratch 🔥
