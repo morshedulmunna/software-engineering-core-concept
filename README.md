@@ -247,3 +247,15 @@ Scope can be defined as the space in which variables and statements are accessib
 -   It is the top scope that englobes the entire code
 -   The declarations inside this space can be accessed anywhere in the code
     ![global-scope](./readmeImage/image.png)
+
+**Block scope :**
+
+-   The space between a pair of curly braces (if block, for block, etc.)
+-   Applicable to let and const
+-   Declarations are only accessible inside the block
+
+In the example below we are able to print the variable msgOne but not constant msgTwo. As mentioned before **const** and **let** are block scoped so they are only visible inside the block, in this case inside the if statement.
+
+On the other hand **var** is function scope so can be accessed within the function.
+
+![block-scope](./readmeImage/block-scope.png)
