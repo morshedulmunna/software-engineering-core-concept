@@ -16,12 +16,7 @@
     -   [ReferenceError](#referenceerror)
     -   [SyntaxError](#syntaxerror)
     -   [TypeError](#typeerror)
-    -   [RangeError](#rangeerror)
-    -   [URIError](#urierror)
     -   [AggregateError](#aggregateerror)
-    -   [InternalError](#internalerror)
-    -   [EvalError](#evalerror)
-    -   [InvariantError](#invarianterror)
 -   [JavaScript Scope & Scope Chain](#javascript-scope-chain)
 -   [Javascript closure](#javascript-closure)
 
@@ -197,6 +192,11 @@ Certainly! JavaScript has various types of errors that can occur during code exe
 
 This error occurs when trying to use a variable that has not been declared or is not within the current scope. For instance, accessing a variable that doesn't exist will result in a ReferenceError.
 
+```
+console.log(x); // Uncaught ReferenceError: x is not defined
+let x = 20
+```
+
 **SyntaxError:**<a name="syntaxerror"></a>
 
 This error occurs when there's a mistake in the syntax of the code, making it impossible for the interpreter to parse correctly. Common examples include missing brackets, semicolons, or incorrect keywords.
@@ -204,14 +204,12 @@ This error occurs when there's a mistake in the syntax of the code, making it im
 **TypeError:**<a name="typeerror"></a>
 
 This error occurs when a value is not of the expected type. For instance, attempting to call a method on a variable that is not a function will result in a TypeError.
+**_when you can try to mutated const declarations value will result in a TypeError instead of a TypeError._**
 
-**RangeError:**<a name="rangeerror"></a>
-
-This error occurs when a numeric value is not within the expected range. For instance, trying to create an array with a negative length will result in a RangeError.
-
-**URIError:**<a name="urierror"></a>
-
-This error occurs when there's a problem with encodeURI(), decodeURI(), encodeURIComponent(), or decodeURIComponent(). For example, passing an invalid parameter to these functions will result in a URIError.
+```
+const foo = 30;
+foo = 90 // Uncaught TypeError: Assignment to constant variable.
+```
 
 **AggregateError:**<a name="aggregateerror"></a>
 
@@ -225,18 +223,6 @@ try{
     console.error(err.error);
 }
 ```
-
-**InternalError:**<a name="internalerror"></a>
-
-This error occurs when an internal error in the JavaScript engine occurs. It's typically non-standard and might not be encountered frequently in regular coding.
-
-**EvalError:**<a name="evalerror"></a>
-
-This error is not commonly used. It was intended to handle errors in the deprecated **eval()** function.
-
-**InvariantError:**<a name="invarianterror"></a>
-
-An error thrown when an invariant condition is violated. It's often used in development environments to signal logical errors in code.
 
 These errors can be caught using try...catch blocks in JavaScript to handle exceptional cases gracefully. Each type of error provides specific information that can be helpful for debugging, allowing developers to identify and fix issues in their code effectively.
 

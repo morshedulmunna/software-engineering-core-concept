@@ -1,5 +1,3 @@
-10. Closure -> ( Binding Function and her lexical environment)
-
 11. variable shadowing or shadowing -> ( var a = 10; {var a = 20} |-> Pointer same memory pointer
     | shadow global scope to block scope | ->| Block scope complete execution end then it's gone| let and const not shadowing ony shadow var |->| ( var a = 10; {let a = 30} && let a = 20; fn x(){var a =30}^^ it's right not iligal shadow ))
 
