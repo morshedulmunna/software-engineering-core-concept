@@ -329,3 +329,62 @@ console.log(get_func_inner());
 
 Another Example
 ![js-closure](./readmeImage/closure.png)
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
+
+### Variable Shadowing , let const [Solve memory leak problem]
+
+at first, need to understand why needs **let** **const** variables. what is the problem in **var** keyword
+let's see the code below,
+
+```
+var x = 90
+{
+ var x = 80
+ console.log(x)
+}
+console.log(x)
+
+output:
+ 80
+ 80
+
+ // why output same for the different variables scope. it's memory leak issue.
+ here x shadows the global x variables
+```
+
+When you declare a variable using var within a block (like within {}), it doesn't create a new block scope; instead, it modifies the existing variable of the same name in the outer scope. This behavior can lead to unexpected results, as you rightly pointed out.
+
+The introduction of `let` and `const` in ES6 provides a solution to this problem by introducing block-scoped variables:
+
+-   `let` allows the variable to be reassigned within its scope but doesn't allow redeclaration within the same scope.
+-   `const` also creates block-scoped variables but doesn't allow reassignment after declaration.
+
+By using `let` or `const`, you can avoid variable shadowing and prevent unintentional modification of variables in outer scopes.
+
+In your example, using `let` or `const` instead of `var` would resolve the issue:
+
+```
+let x = 90; // or const x = 90; if it's not meant to be reassigned
+{
+  let x = 80; // This x is in a different scope
+  console.log(x); // Outputs 80
+}
+console.log(x); // Outputs 90
+
+```
+
+This way, the variable x within the block has its own scope and doesn't affect the outer x variable, thereby preventing unintended behavior and potential memory leaks.
+
+**let const and var**
+
+![Alt text](./readmeImage/variable.png)
+
+**Is variable shadowing good or bad?**
+If we already had some variable and we shadowed it inside another scope, we are losing access to the original variable and will not receive the output we need inside another scope. Shadowing can lead to unneeded bugs and results and will be harder to debug when you have many variables.
+
+That’s why it’s always better to name variables in a more explanatory way
