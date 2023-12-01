@@ -1,7 +1,6 @@
 ## Table of Contents <a name="table"></a>
 
 -   [JavaScript Execution Context](#javascript-execution-context)
-
 -   [Call Stack](#call-stack)
 -   [Function Details](#function-details)
     -   [Function Declaration or Function Statement](#function-declaration-or-function-statement)
@@ -18,8 +17,9 @@
     -   [TypeError](#typeerror)
     -   [AggregateError](#aggregateerror)
 -   [JavaScript Scope & Scope Chain](#javascript-scope-chain)
--   [Javascript closure](#javascript-closure)
 -   [Variable Shadowing , let const [Solve memory leak problem]](#variable-shadowing)
+-   [Javascript Hoisting](#javascript-hoisting)
+-   [Javascript closure](#javascript-closure)
 
 # Learn JavaScript core Concept!
 
@@ -55,6 +55,8 @@ When a function is called in JavaScript, it's added to the call stack. As functi
         <button>Go to top</button>
     </a>
 </div>
+
+---
 
 ### Function Details :<a name="function-details"></a>
 
@@ -185,6 +187,8 @@ const result = addNumbers(3, 5); // 3 and 5 are arguments
     </a>
 </div>
 
+---
+
 ## JavaScript Errors<a name="javascript-errors"></a>
 
 Certainly! JavaScript has various types of errors that can occur during code execution. Here's an overview of some common errors:
@@ -232,6 +236,8 @@ These errors can be caught using try...catch blocks in JavaScript to handle exce
         <button>Go to top</button>
     </a>
 </div>
+
+---
 
 ### JavaScript Scope & Scope Chain <a name="javascript-scope-chain"></a>
 
@@ -314,36 +320,7 @@ Or to put it more simply, the Scope Chain is the chain of the Lexical Environmen
     </a>
 </div>
 
-### JavaScript Closure <a name="javascript-closure"></a>
-
-A closure is the combination of a **function bundled together (enclosed) with references to its surrounding state (the lexical environment).** In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, **_closures are created every time a function is created, at function creation time._**
-
-```JavaScript
-function outer() {
-    let b = 1;
-    function inner() {
-        return b;
-    }
-    return inner;
-}
-let get_func_inner = outer(); //here create closure outer function
-
-/* how can access b after returning a outer function.
-normally it's could not be access b because outer function return
-then it's not stay in call stack and memory.
-but it's still accessible because of javaScript closure*/
-console.log(get_func_inner());
-
-```
-
-Another Example
-![js-closure](./readmeImage/closure.png)
-
-<div style="text-align: right;">
-    <a href="#table">
-        <button>Go to top</button>
-    </a>
-</div>
+---
 
 ### Variable Shadowing , let const [Solve memory leak problem] <a name="variable-shadowing"></a>
 
@@ -461,6 +438,56 @@ Remember, JavaScript follows **lexical scoping rules**, where inner scopes have 
 If we already had some variable and we shadowed it inside another scope, we are losing access to the original variable and will not receive the output we need inside another scope. Shadowing can lead to unneeded bugs and results and will be harder to debug when you have many variables.
 
 That’s why it’s always better to name variables in a more explanatory way
+
+<div style="text-align: right;">
+    <a href="#table">
+        <button>Go to top</button>
+    </a>
+</div>
+
+---
+
+### JavaScript Hoisting Concept <a name="javascript-hoisting"></a>
+
+When the JS engine gets our script, the first thing it does is setting up memory for the data in our code. No code is executed at this point, it’s simply just preparing everything for execution. The way that function declarations and variables are stored is different. Functions are stored with a reference to the entire function.
+
+see image below
+![Alt text](./readmeImage/hoisting.png)
+
+after setting up memory then go to execute patch
+![Alt text](./readmeImage/gif12.gif)
+
+All done! 🎉 Quick recap:
+
+-   **Functions** and **variables** are stored in memory for an execution context before we execute our code. This is called hoisting.
+-   **Functions are stored with a reference** to the entire functions, variables with the **var keyword with the value of undefined**, and variables with the **let and const keyword are stored uninitialized**.
+
+---
+
+### JavaScript Closure <a name="javascript-closure"></a>
+
+A closure is the combination of a **function bundled together (enclosed) with references to its surrounding state (the lexical environment).** In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, **_closures are created every time a function is created, at function creation time._**
+
+```JavaScript
+function outer() {
+    let b = 1;
+    function inner() {
+        return b;
+    }
+    return inner;
+}
+let get_func_inner = outer(); //here create closure outer function
+
+/* how can access b after returning a outer function.
+normally it's could not be access b because outer function return
+then it's not stay in call stack and memory.
+but it's still accessible because of javaScript closure*/
+console.log(get_func_inner());
+
+```
+
+Another Example
+![js-closure](./readmeImage/closure.png)
 
 <div style="text-align: right;">
     <a href="#table">
