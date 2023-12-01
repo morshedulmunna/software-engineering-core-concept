@@ -1,139 +1,191 @@
+## Table of Contents
+
+-   [JavaScript Execution Context](#javascript-execution-context)
+    -   [Parts](#parts)
+    -   [Phases](#phases)
+-   [Call Stack](#call-stack)
+-   [Function Details](#function-details)
+    -   [Function Declaration or Function Statement](#function-declaration-or-function-statement)
+    -   [Function Expression](#function-expression)
+    -   [Anonymous Function](#anonymous-function)
+    -   [IIFE (Immediately Invoked Function Expression)](#iife-immediately-invoked-function-expression)
+    -   [Arrow Function](#arrow-function)
+    -   [First-Class Function or Higher-Order Function](#first-class-function-or-higher-order-function)
+    -   [Callback Function](#callback-function)
+    -   [Parameters vs Arguments](#parameters-vs-arguments)
+-   [JavaScript Errors](#javascript-errors)
+    -   [ReferenceError](#referenceerror)
+    -   [SyntaxError](#syntaxerror)
+    -   [TypeError](#typeerror)
+    -   [RangeError](#rangeerror)
+    -   [URIError](#urierror)
+    -   [AggregateError](#aggregateerror)
+    -   [InternalError](#internalerror)
+    -   [EvalError](#evalerror)
+    -   [InvariantError](#invarianterror)
+
 # JavaScript
 
-    1. Execution Context
-      # Parts
-        1.Memory Component or variable environment
-        2.Code Component or thread of execution
-      #Phases
-        1. Creation Phase or memory creation phase
-        2. Execution phase or code execution phase
-    2. Call Stack
-    3. Function
-        1. Function declaration or function statement
-        2. function expression -> when store a variable
-        3. anonymous function -> no name this function
-        4. IIFE (Immediate invoked function expression)
-        5. Arrow function
-        6. fist class function or higher order function
-        7.callback function
-        8.parameters vs arguments
-    4. hoisting -> When allocating Memory before Execution phase ( var, let, const, function)
-    5. Primitive vs non-primitive Data types
-    6. Errors:
-        1. Reference Error: "__" is Not Defined -> No any key in lexical environment
-        2. Reference Error: "__" Can't assess before declaration ->(temporary Dead zone)
-        3. Type Error: "__" -> when try to mutate a const variable
-    7. Scope
-    8. Scope chain -> {Lexical Env Chaining }
-    9. lexical Environment -> Execution context er memory component + Parent execution context er lexical Environment
-    10. Closure -> ( Binding Function and her lexical environment)
-    11. variable shadowing or shadowing  -> ( var a = 10; {var a = 20} |-> Pointer same memory pointer
-    | shadow global scope to block scope | ->| Block scope complete execution end then it's gone| let and const not shadowing ony shadow var |->| ( var a = 10; {let a = 30} && let a = 20; fn x(){var a =30}^^ it's right not iligal shadow ))
+### How javaScript Work :
 
-    12. memory leaking problem -> solve it then came to ES6 Let and const
-    13. let / const
+-   Execution Context
+    -   Parts
+        -   Memory Component or variable environment
+        -   Code Component or thread of execution
+    -   Phase
+        -   Creation Phase or memory creation phase
+        -   Execution phase or code execution phase
+-   Call Stack
+    The call stack in JavaScript is a mechanism used to keep track of the functions being executed in a program. It operates on a Last In, First Out (LIFO) basis, meaning that the last function that gets pushed onto the stack is the first one to be popped off and executed.
+    When a function is called in JavaScript, it's added to the call stack. As functions are executed, they are removed from the stack. If a function calls another function, the new function gets added on top of the previous one, forming a stack of function calls. When a function finishes executing, it is removed from the stack, and the control returns to the previous function in the stack.
 
-    14. block={} or Component Statement -> (Combine or grouping of multiple statements) if()_block or Statement | {{{}}}-> lexical Environment working  also
-    15. Block scope - > (what all variable or statement access in the block that is the scope,/ let and const hoisted in the block scope | Block scope complete execution end then it's gone)
+### Function Details :
 
+**Function Declaration or Function Statement**
+This is a basic way to declare a function using the `function` keyword. or arrow function. it's just declared as a function never call. when it's called that means it's invoked.
 
-    16. Isn't there hoisting in let/const or function?
-    17. Temporal Date zone -> it's time zone which one Create phase to before variable assign
-    18. Micro Task -> the callback function from promise
-    19. Promise
-    20. JavaScript Runtime Environment (browser environment, nodejs Environment)
-    21. JavaScript Engine
-    22. Browser Resource or features
-    23. Web APIS
-    24. thread
-    25. heap
-        1. Callback queue or task queue
-        2. microtask queue
-    26. Event loop
-    27. Starvation of function -> when callback queue call another function and continue running and accord loop
-    28. ->
-    29. -------------------------------------------------------------------------
-    30. this keyword, call , apply() , bind()
-    31. Normal function vs arrow function -> Main difference this keyword. in arrow function this always point outer scope object | where deacler the function.
+```plaintext
 
-# Operating System
+function greet() {
+    console.log("Hello!");
+}
+```
 
-    1. RAM
-    2. HHD(Hard Disk)
-    3.CPU
-    4.Software Installation
-    5.Loading on Ram
-    6. Processes or Virtual Computer
-    7. Context switching
-    8. PCB or process control block
-    9. Process state
-    10. Logical CPU
-    11. Concurrency or Concurrent Execution
-    12. Parallel Execution
+**Function Expression**
+A function expression stores a function as a value in a variable.
 
-# Node Js
+```plaintext
 
-<!-- Node JS Deep Thinking -->
+const sayHello = function() {
+    console.log("Hi there!");
+};
+or -----------------------------------
+var greet = () => {
+    console.log("Hello!");
+}
+```
 
-    Class -1
-        - Javascript(100%js) -> nodeJs(50%js, 50%c++) -> v8(30%js, 70%c++) & libuv(100%C++)
-        - Node Modules -> http,fs,crypto,path and lots
+**Anonymous Function**
+An anonymous function doesn't have a name; it's assigned to a variable without a specific name.
 
-    class -2
-        - Javascript
+```plaintext
 
-<!-- Node JS Deep Thinking -->
+const add = function(a, b) {
+    return a + b;
+};
+```
 
-    Module
-    1. Os
-    2. path
-    3. fs
-    4. http
-    // =======
-    5. class
-      - Constructor functions
-      - syntactical sugar
-      - property
-      - generator function
-      - method
-    6. Object
-    7. version
-        a. Major
-        b. minor
-        c. patch
-    8. route
-    9. Restful API
-       1. REST -> Representational state Transfer
-        ====== Set of Rules for REST
-            - Stateless Communications
-            - Cacheability and Layered System
-            - Use of Standard Methods and Uniform Interface
-              - **GET**: Retrieves a resource or collection of resources.
-              - **POST**: Creates a new resource or submits data for processing.
-              - **PUT**: Updates an existing resource fully by replacing it with new data.
-              - **PATCH**: Partially updates a resource with specific changes.
-              - **DELETE**: Removes a resource.
-            - Clear and Consistent Naming Conventions
-       2. APIS -> Application Programming Interface
+**IIFE (Immediately Invoked Function Expression)**
+An IIFE runs immediately after it's defined, encapsulating its scope.
 
-# ReactJs
+```plaintext
+(function() {
+    console.log("IIFE running!");
+})();
+```
 
-    1. What is React. -> Virtual DOM, Real DOM
-    2. component
-    3. props, props dealing
-    4. React Lifecycle
-       1. Mounting
-          1. constructor()
-          2. render()
-          3. componentDinMount()
-       2. Updating
-          1. render()
-          2. componentDidUpdate()
-       3. Unmounting
-          1. componentWillUnmount()
+**Arrow Function**
+Arrow functions provide a more concise syntax for writing functions.
 
-### Advance React
+```plaintext
 
-    1. Portals React -> https://react.dev/reference/react-dom/createPortal
-    2. forwardRef -> https://react.dev/reference/react/forwardRef
-    3.  Error Boundary -> https://react.dev/reference/react/useTransition#displaying-an-error-to-users-with-error-boundary
+const multiply = (a, b) => {
+    return a * b;
+};
+```
+
+| Aspect               | Arrow Functions                                                                          | Normal Functions                                           |
+| -------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Syntax               | Concise syntax                                                                           | More verbose syntax                                        |
+| `this` binding       | Inherits `this` from surrounding context. that means this keyword point her outer scope. | Has its own `this` context determined by how it's called   |
+| `arguments` object   | Does not have its own `arguments` object                                                 | Has its own `arguments` object containing passed arguments |
+| Constructor usage    | Cannot be used with `new` to create objects                                              | Can be used with `new` to create objects                   |
+| `prototype` property | Does not have a `prototype` property                                                     | Has a `prototype` property for object creation             |
+| Implicit return      | Can implicitly return a value if single expression                                       | Explicit `return` statement needed                         |
+
+**First-Class Function or Higher-Order Function**
+Functions are treated as first-class citizens; they can be assigned as values, passed as arguments, and returned from other functions. or Received functions as a parameter and return a function.
+
+```javascript
+function sayName(name) {
+    return function () {
+        console.log(`Hello, ${name}!`);
+    };
+}
+const greeting = sayName("Alice");
+greeting(); // Outputs: Hello, Alice!
+```
+
+**Callback Function**
+A callback function is passed as an argument to another function and executed after an operation is completed.
+
+```plaintext
+
+function fetchData(callback) {
+    // Simulated asynchronous operation
+    setTimeout(() => {
+        const data = "Some data";
+        callback(data);
+    }, 1000);
+}
+
+function displayData(data) {
+    console.log(`Data received: ${data}`);
+}
+
+fetchData(displayData); // Outputs: Data received: Some data
+```
+
+**Parameters vs Arguments**
+Parameters are variables in a function definition, while arguments are the actual values passed to the function when it's invoked.
+
+```plaintext
+
+function addNumbers(x, y) { // x and y are parameters
+    return x + y;
+}
+
+const result = addNumbers(3, 5); // 3 and 5 are arguments
+```
+
+## JavaScript Errors
+
+Certainly! JavaScript has various types of errors that can occur during code execution. Here's an overview of some common errors:
+
+**ReferenceError:**
+This error occurs when trying to use a variable that has not been declared or is not within the current scope. For instance, accessing a variable that doesn't exist will result in a ReferenceError.
+
+**SyntaxError:**
+This error occurs when there's a mistake in the syntax of the code, making it impossible for the interpreter to parse correctly. Common examples include missing brackets, semicolons, or incorrect keywords.
+
+**TypeError:**
+This error occurs when a value is not of the expected type. For instance, attempting to call a method on a variable that is not a function will result in a TypeError.
+
+**RangeError:**
+This error occurs when a numeric value is not within the expected range. For instance, trying to create an array with a negative length will result in a RangeError.
+
+**URIError:**
+This error occurs when there's a problem with encodeURI(), decodeURI(), encodeURIComponent(), or decodeURIComponent(). For example, passing an invalid parameter to these functions will result in a URIError.
+
+**AggregateError:**
+Introduced in ES2020, it's used to represent multiple errors in the context of operations like Promise.allSettled() or Promise.any(). This error aggregates several errors into a single object, allowing handling multiple errors simultaneously.
+\_\_\_access Errors using:\_\_\_
+
+```
+try{
+
+}catch(e){
+    console.error(err.error);
+}
+```
+
+**InternalError:**
+This error occurs when an internal error in the JavaScript engine occurs. It's typically non-standard and might not be encountered frequently in regular coding.
+
+**EvalError:**
+This error is not commonly used. It was intended to handle errors in the deprecated **eval()** function.
+
+**InvariantError:**
+An error thrown when an invariant condition is violated. It's often used in development environments to signal logical errors in code.
+
+These errors can be caught using try...catch blocks in JavaScript to handle exceptional cases gracefully. Each type of error provides specific information that can be helpful for debugging, allowing developers to identify and fix issues in their code effectively.
