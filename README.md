@@ -25,6 +25,7 @@
 -   [Undefined vs not Defined in JavaScript](#undefined-vs-notdefined)
 -   [Asynchronous JavaScript & EVENT LOOP from scratch](#asynchronous-javascript--event-loop-from-scratch)
 -   [Polyfill Bind Method](#polyfill-bind)
+-   [Debounce Strategy](#debounce)
 
 # Learn JavaScript core Concept!
 
@@ -667,4 +668,76 @@ Function.prototype.myBind = function (...arg) {
 let printMyInfo2 = printName.myBind(info, "21/04/1997", "BUBT");
 printMyInfo2("Hello");
 
+```
+
+<a name="debounce"></a>
+
+### Debouching Strategy
+
+**Debouncing: Taming Rapid Fire Actions**
+Debouncing is a technique used to control the frequency of function execution. It is particularly useful when dealing with events that fire rapidly, such as resizing a browser window or handling input from a user typing on a keyboard.
+
+-   **Search Input:** In an autocomplete search bar, debounce can be used to delay the search query until the user has stopped typing for a short period, reducing the number of unnecessary API requests.
+
+-   **Text Editor Autosave:** When implementing an autosave feature in a text editor, debounce can ensure that the save operation only occurs after the user has paused typing.
+
+-   **Window Resize Handling:** Debounce can be useful when handling window resize events, allowing you to recalculate and adjust the layout only after the user has finished resizing the window.
+
+let's build Search Suggestions -
+
+Imagine you're implementing an autocomplete feature in a search bar. Without debouncing, the function responsible for fetching suggestions from a server might be called repeatedly as the user types each letter, causing unnecessary network requests. Debouncing allows you to delay these requests until the user has paused typing.
+
+lets implement the function
+
+```javascript
+let count = 0;
+const doNetwork = () => {
+    console.log("network calling..", count++);
+};
+
+const debouching = function (fn, delay) {
+    let timer;
+    return function () {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            doNetwork.apply(this, arguments);
+        }, delay);
+    };
+};
+
+const batterFunction = debouching(doNetwork, 600);
+```
+
+**Throttling: Limiting Function Calls**
+Throttling is a method used to limit the rate at which a function is executed. It is beneficial when you want to ensure a function isn't invoked more often than a certain threshold, such as handling scroll events or preventing button double-clicks.
+
+-   **Scroll Animation:** Throttling can be used to control the rate at which scroll events trigger animations or transitions on elements as the user scrolls down a page.
+
+-   **Mousemove Tracking:** Throttle mousemove events to create interactive effects like parallax scrolling without overloading the browser with constant updates.
+-   **Button Clicks:** Throttle button clicks to prevent double-clicking or rapid successive clicks from triggering multiple actions.
+
+let's build Scrolling Animations -
+
+Suppose you're creating a parallax scrolling effect where elements change position based on the user's scroll. Without throttling, the position update function could be called rapidly as the user scrolls, resulting in a jittery animation. Throttling ensures the function is called at a controlled rate.
+
+```javascript
+function throttle(func, limit) {
+    let inThrottle;
+    return function (...args) {
+        if (!inThrottle) {
+            func(...args);
+            inThrottle = true;
+            setTimeout(() => {
+                inThrottle = false;
+            }, limit);
+        }
+    };
+}
+
+const handleScroll = throttle(() => {
+    // Update element positions based on scroll here
+    console.log("Updating scroll position");
+}, 200);
+
+window.addEventListener("scroll", handleScroll);
 ```
