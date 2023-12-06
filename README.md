@@ -22,7 +22,8 @@
 -   [JavaScript Hoisting](#javascript-hoisting)
 -   [JavaScript closure](#javascript-closure)
 -   [Temporal Dead Zone (TDZ) in JavaScript ( Time zone)](#temporal-dead)
--   [undefined vs not Defined in JavaScript](#undefined-vs-notdefined)
+-   [Undefined vs not Defined in JavaScript](#undefined-vs-notdefined)
+-   [Asynchronous JavaScript & EVENT LOOP from scratch](#asynchronous-javascript--event-loop-from-scratch)
 
 # Learn JavaScript core Concept!
 
@@ -543,10 +544,10 @@ function x() {
 }
 x()
 output:
-6
-6
-6
-6
+10
+10
+10
+10
 .
 .
 .
@@ -614,4 +615,51 @@ console.log(a); // Output will be 'undefined'
 
 ---
 
+<a name="asynchronous-javascript--event-loop-from-scratch"></a>
+
 ### Asynchronous JavaScript & EVENT LOOP from scratch 🔥
+
+Asynchronous programming model has become so popular these days that programmers use it without actually understanding it. This leads to confusions such as conflating concurrency with parallelism.
+
+!["Event-loop"](./readmeImage/event-loop.gif)
+
+**Models of programming**
+Programming model is an abstract concept that explains how the program is structured and how it will run when executed. In order to appreciate asynchronous programming model,
+
+<!-- TODO=> -->
+
+### Polyfill for bind Method
+
+Polyfill is nothing but support to older browsers which doesn’t have new methods.
+just add this method to Function.prototype
+
+```javascript
+Create a myoOwn MyBind method
+let info = {
+    name: "Muhib Khan",
+    age: 12,
+};
+
+let printName = function (birthday, university, hello) {
+    console.log(
+        `${hello} My name is ${this.name} and age is ${this.age}. my birthday ${birthday}. my university name is ${university}`
+    );
+};
+
+let printMyInfo = printName.bind(info, "21/04/1997", "BUBT");
+printMyInfo("Hi");
+
+Function.prototype.myBind = function (...arg) {
+    console.log("arg:", arg);
+    let obj = this;
+    let params = arg.slice(1);
+    console.log("params:", params);
+    return function (...arg2) {
+        obj.apply(arg[0], [...params, ...arg2]);
+    };
+};
+
+let printMyInfo2 = printName.myBind(info, "21/04/1997", "BUBT");
+printMyInfo2("Hello");
+
+```

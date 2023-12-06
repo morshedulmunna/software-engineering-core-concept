@@ -1,18 +1,16 @@
 18. Micro Task -> the callback function from promise
 19. Promise
-20. JavaScript Runtime Environment (browser environment, nodejs Environment)
-21. JavaScript Engine
-22. Browser Resource or features
-23. Web APIS
-24. thread
-25. heap
+<!-- 20. JavaScript Runtime Environment (browser environment, nodejs Environment)
+20. JavaScript Engine
+21. Browser Resource or features
+22. Web APIS -->
+23. thread
+24. heap
     1. Callback queue or task queue
     2. microtask queue
-26. Event loop
-27. Starvation of function -> when callback queue call another function and continue running and accord loop
-28. ->
-29. ***
-30. this keyword, call , apply() , bind()
+25. Event loop
+26. Starvation of function -> when callback queue call another function and continue running and accord loop
+27. this keyword, call , apply() , bind()
 
 # Node Js
 
