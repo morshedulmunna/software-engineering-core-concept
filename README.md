@@ -24,6 +24,7 @@
 -   [Temporal Dead Zone (TDZ) in JavaScript ( Time zone)](#temporal-dead)
 -   [Undefined vs not Defined in JavaScript](#undefined-vs-notdefined)
 -   [Asynchronous JavaScript & EVENT LOOP from scratch](#asynchronous-javascript--event-loop-from-scratch)
+-   [Polyfill Bind Method](#polyfill-bind)
 
 # Learn JavaScript core Concept!
 
@@ -627,6 +628,10 @@ Asynchronous programming model has become so popular these days that programmers
 Programming model is an abstract concept that explains how the program is structured and how it will run when executed. In order to appreciate asynchronous programming model,
 
 <!-- TODO=> -->
+
+---
+
+<a name="polyfill-bind"></a>
 
 ### Polyfill for bind Method
 
