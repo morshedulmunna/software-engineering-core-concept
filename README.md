@@ -670,9 +670,11 @@ printMyInfo2("Hello");
 
 ```
 
+---
+
 <a name="debounce"></a>
 
-### Debouching Strategy
+### Debouching & Throttling Strategy
 
 **Debouncing: Taming Rapid Fire Actions**
 Debouncing is a technique used to control the frequency of function execution. It is particularly useful when dealing with events that fire rapidly, such as resizing a browser window or handling input from a user typing on a keyboard.
