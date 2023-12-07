@@ -27,6 +27,16 @@
 -   [Polyfill Bind Method](#polyfill-bind)
 -   [Debounce Strategy](#debounce)
 
+![important]
+**_Abbreviation_**
+
+```text
+    TCP => Transmission Control Protocol
+    UDP => User Datagram Protocol
+    RESTapi => Representational state transfer
+    API => Application programming interface (API or web API)
+```
+
 # Learn JavaScript core Concept!
 
 <a name="javascript-execution-context"></a>
