@@ -1,16 +1,12 @@
-let count = 0;
-const doNetwork = () => {
-    console.log("network calling..", count++);
-};
+function base() {
+    this.a = 20;
+}
 
-const debouching = function (fn, delay) {
-    let timer;
-    return function () {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            doNetwork.apply(this, arguments);
-        }, delay);
-    };
-};
+function inheritBase() {
+    this.b = 30;
+}
 
-const batterFunction = debouching(doNetwork, 600);
+inheritBase.prototype = new base();
+
+let inheritObj = new inheritBase();
+console.log(inheritObj);
