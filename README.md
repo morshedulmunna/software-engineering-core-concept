@@ -33,6 +33,9 @@
 ```text
     TCP => Transmission Control Protocol
     UDP => User Datagram Protocol
+    MQTT-> Message Queuing Telemetry Transport
+    CoAP - Constrained Application Protocol
+    AMQP  - Advanced Message Queuing Protocol
     RESTapi => Representational state transfer
     API => Application programming interface (API or web API)
 ```
