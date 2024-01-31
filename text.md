@@ -12,7 +12,7 @@
 26. Starvation of function -> when callback queue call another function and continue running and accord loop
 27. this keyword, call , apply() , bind()
 
-# Node Js
+# Node Jssss
 
 <!-- Node JS Deep Thinking -->
 
